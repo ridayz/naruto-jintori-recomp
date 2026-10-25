@@ -1,35 +1,53 @@
-# Minimal game.toml stub for the New Project Layout.
-# With setup_project --disc <cue>, probe_disc.py overwrites this with
-# serial / EXE header / Track 01 digests / TOC fp / [netplay] gates, and writes
-# seeds/ghidra_funcs.txt (boot-EXE JAL scan).
-# Without --disc, fill by hand (or re-run probe_disc.py later).
-# See psxrecomp/docs/GAME_PROJECT_SETUP.md and docs/config_schema.md.
+# Autofilled by tools/new_project_layout/probe_disc.py from your legal dump.
+# Review before shipping. Runtime quirks / overlay seeds still need hand work.
 
 [game]
-name = "NarutoJintori"
-# id = "SLUS-XXXXX"
+name = "Naruto: Shinobi no Sato no Jintori Kassen"
+id = "SLPS-03553"
 players = 2
-# exe = "disc/SLUS_01234"
-# disc = "disc/game.cue"
-# load_address = "0x80010000"
-# entry_pc = "0x800XXXXX"
-# text_size = "0x00000000"
-# stack_base = "0x801FFFF0"
+exe = "../disc/SLPS_035.53"
+disc = "../disc/Naruto - Shinobi no Sato no Jintori Gassen (Japan).cue"
+load_address = "0x80010000"
+entry_pc = "0x80011448"
+text_size = "0x0005D800"
+stack_base = "0x801FFFF0"
+
+[prepare_disc]
+out_dir = "disc"
+bin_name = "Naruto - Shinobi no Sato no Jintori Gassen (Japan).bin"
+cue_name = "Naruto - Shinobi no Sato no Jintori Gassen (Japan).cue"
+boot_exe = "SLPS_035.53"
+known_sizes = [325989552]
+known_md5 = [
+  "82e1dcfd2e09b954f59b9cdfd71c155b",
+]
+known_sha1 = [
+  "b1ec331c9939dd599b52b692d90ae7e163b979c2",
+]
+known_crc32 = [
+  "dfe1f8b3",
+]
 
 [recompiler]
 seeds = "seeds/ghidra_funcs.txt"
 out_dir = "generated"
 strict = true
 
-# Optional identity hashes for Generate / netplay dump checks:
-# [prepare_disc]
-# out_dir = "disc"
-# boot_exe = "SLUS_01234"
-# known_sizes = [...]
-# known_md5 = [...]
-# known_sha1 = [...]
+[runtime]
+debug_port = 4370
+window_title = "Naruto: Shinobi no Sato no Jintori Kassen Recompiled"
+memcard_dir = "saves"
+overlay_cache = true
 
-# [netplay]
-# require_cue = true
-# required_tracks = 0
-# required_disc_fp = "…"
+[video]
+renderer = "opengl"
+aspect_ratio = "4:3"
+
+[controller]
+default_mode = "digital"
+multitap_analog = true
+
+[netplay]
+require_cue = true
+required_tracks = 1
+required_disc_fp = "391fa80001f380736d48cc14c95d3ec74449205518555c72a6fff1a48a1e2588"

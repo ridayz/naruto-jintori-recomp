@@ -1,0 +1,48 @@
+{
+  "format_version": 1,
+  "game": {
+    "name": "Naruto: Shinobi no Sato no Jintori Kassen",
+    "id": "SLPS-03553",
+    "boot_exe": "SLPS_035.53"
+  },
+  "marketing": {
+    "description": "Naruto territory-capture board game port",
+    "publisher": "TOMY",
+    "year": "2001",
+    "region": "Japan",
+    "players": 2
+  },
+  "rom_identity": {
+    "cue_name": "Naruto - Shinobi no Sato no Jintori Gassen (Japan).cue",
+    "bin_name": "Naruto - Shinobi no Sato no Jintori Gassen (Japan).bin",
+    "track_counts": [
+      1
+    ],
+    "require_cue": true,
+    "data_track": {
+      "size": 325989552,
+      "md5": "82e1dcfd2e09b954f59b9cdfd71c155b",
+      "sha1": "b1ec331c9939dd599b52b692d90ae7e163b979c2",
+      "crc32": "dfe1f8b3"
+    },
+    "disc_fp": "391fa80001f380736d48cc14c95d3ec74449205518555c72a6fff1a48a1e2588"
+  },
+  "exe": {
+    "load_address": "0x80010000",
+    "entry_pc": "0x80011448",
+    "text_size": "0x0005D800",
+    "stack_base": "0x801FFFF0"
+  },
+  "seeds": {
+    "count": 899,
+    "source": "boot_exe_jal"
+  },
+  "warnings": [
+    "cue has only 1 TRACK \u2014 Track-01-only dumps fail multi-track netplay/catalog gates; prefer a full Redump cue."
+  ],
+  "notes": [
+    "entry_pc/load_address/text_size/stack_base taken from PS-X EXE header.",
+    "seeds are first-pass boot-EXE JAL targets (+ entry); expect to grow as overlays / runtime paths are discovered.",
+    "required_disc_fp is psxrecomp-toc-v1 (matches runtime DiscIdentity)."
+  ]
+}

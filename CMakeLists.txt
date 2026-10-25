@@ -40,7 +40,7 @@ psxrecomp_add_game_runtime(psx-runtime
     # ENABLE_NETPLAY_IF_PRESENT
     # NETPLAY_LOBBY_URL ws://netplay.retcomm.net:8765
     ENABLE_SETUP_WIZARD
-    WINDOW_TITLE "NarutoJintori Recompiled"
+    WINDOW_TITLE "Naruto: Shinobi no Sato no Jintori Kassen Recompiled"
     DEFAULT_GAME_CONFIG_PATH "game.toml"
     MAX_PLAYERS 2
     # LAUNCHER_BOXART "${CMAKE_CURRENT_SOURCE_DIR}/launcher_assets/img/boxart.tga"
@@ -48,8 +48,8 @@ psxrecomp_add_game_runtime(psx-runtime
     # Committed game C (psxrecomp_cli.py generate; git add generated). Release
     # CI configures with -DPSXRECOMP_REQUIRE_GAME_C=ON so a checkout without
     # it fails instead of building a setup host.
-    GEN_MARKER "generated/SLUS_01234_dispatch.c"
-    GEN_FULL_GLOB "generated/SLUS_01234_full_*.c"
+    GEN_MARKER "generated/SLPS_035.53_dispatch.c"
+    GEN_FULL_GLOB "generated/SLPS_035.53_full_*.c"
     CODEGEN_SETUP_SOURCES "${CMAKE_CURRENT_SOURCE_DIR}/codegen_setup.c"
 )
 
